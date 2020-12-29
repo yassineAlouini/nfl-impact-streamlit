@@ -2,6 +2,6 @@ pillow
 streamlit
 pandas
 albumentations
-pytorch 
+torch 
 torchvision
 numpy

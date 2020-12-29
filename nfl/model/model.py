@@ -7,11 +7,7 @@ import cv2
 import pandas as pd
 import numpy as np
 import albumentations as A
-import matplotlib.pyplot as plt
 from albumentations.pytorch.transforms import ToTensorV2
-from sklearn.model_selection import StratifiedKFold
-from torch.utils.data import Dataset, DataLoader
-from torch.utils.data.sampler import SequentialSampler, RandomSampler
 from glob import glob
 import pandas as pd
 from effdet import get_efficientdet_config, EfficientDet, DetBenchTrain, DetBenchEval
@@ -48,6 +44,3 @@ def load_net(checkpoint_path):
     net = DetBenchEval(net, config)
     net.eval()
     return net.cuda()
-
-
-net = load_net(MODEL_PATH)

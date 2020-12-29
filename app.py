@@ -7,7 +7,11 @@ import albumentations as A
 from albumentations.pytorch.transforms import ToTensorV2
 import numpy as np
 import pandas as pd
-MODEL_PATH = ""
+from pathlib import Path
+from nfl.model.model import load_net
+
+# Absolute path to the model pre-trained detection model.
+MODEL_PATH = Path(__file__).parent  / "model" / "best-checkpoint-002epoch.bin"
 
 
 
@@ -89,6 +93,10 @@ def play_video():
          st.video(bytes_data)
 
 def predict_image():
+
+    model = load_net(MODEL_PATH)
+    st.text("The model we will be using: ")
+    st.write(model)
     uploaded_file = st.file_uploader("Select an image to predict: ")
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
