@@ -5,3 +5,4 @@ albumentations
 torch 
 torchvision
 numpy
+effdet

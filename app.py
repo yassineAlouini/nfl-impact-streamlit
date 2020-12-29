@@ -94,7 +94,7 @@ def play_video():
 
 def predict_image():
 
-    model = load_net(MODEL_PATH)
+    # model = load_net(MODEL_PATH)
     st.text("The model we will be using: ")
     st.write(model)
     uploaded_file = st.file_uploader("Select an image to predict: ")
